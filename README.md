@@ -30,28 +30,19 @@ Before you begin, ensure you have met the following requirements:
 Create a virtual environment (optional but recommended): It’s a good practice to create a virtual environment for Python projects. You can create one using the following command:
 
 `python -m venv .venv`
+
 Activate the virtual environment:
 
 On Windows:
 `.venv\Scripts\activate`
+
 On macOS/Linux:
 `source .venv/bin/activate`
+
 Install the required packages: Use the requirements.txt file to install the necessary libraries:
 
 `pip install -r requirements.txt`
-Prepare your dataset: Ensure you have a dataset of emails organized into ham (non-spam) and spam directories. Each directory should contain text files of emails.
-
-The dataset structure should look like this:
-
-dataset/
-├── ham/
-│   ├── email1.txt
-│   ├── email2.txt
-│   └── ...
-└── spam/
-    ├── email1.txt
-    ├── email2.txt
-    └── ...
+Prepare your dataset: Ensure you have a dataset of emails organized into ham (non-spam) and spam directories.
 
 ## Usage
 Run the email preprocessor: Execute the email_preprocessor.py script to load and preprocess the emails:
