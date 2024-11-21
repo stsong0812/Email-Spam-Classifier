@@ -61,5 +61,7 @@ This will create vectorized training and testing data files (X_train_vectorized.
 Train your model:
 ## File Descriptions
 email_preprocessor.py: Script to load and preprocess the email dataset, saving the cleaned data to cleaned_emails.csv.
+
 vectorize.py: Script to vectorize the cleaned email data and save the vectorized training and testing datasets.
+
 requirements.txt: Contains a list of required Python packages for the project.
