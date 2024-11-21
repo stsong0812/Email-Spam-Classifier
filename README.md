@@ -36,33 +36,21 @@ Before you begin, ensure you have met the following requirements:
 
 Create a virtual environment (optional but recommended): It’s a good practice to create a virtual environment for Python projects. You can create one using the following commands:
 
-bash
-Insert Code
-Edit
-Copy code
-python -m venv .venv
+   ```bash
+   python -m venv .venv
 Activate the virtual environment:
 
 On Windows:
-bash
-Insert Code
-Edit
-Copy code
-.venv\Scripts\activate
+   ```bash
+   .venv\Scripts\activate
 On macOS/Linux:
-bash
-Insert Code
-Edit
-Copy code
-source .venv/bin/activate
+   ```bash
+   source .venv/bin/activate
 Install the required packages: Use the requirements.txt file to install the necessary libraries:
 
-bash
-Insert Code
-Edit
-Copy code
-pip install -r requirements.txt
-Usage
+   ```bash
+   pip install -r requirements.txt
+## Installation
 Prepare your dataset: Ensure you have a dataset of emails organized into ham (non-spam) and spam directories. Each directory should contain text files of emails.
 
 The dataset structure should look like this:
