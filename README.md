@@ -42,17 +42,20 @@ On macOS/Linux:
 Install the required packages: Use the requirements.txt file to install the necessary libraries:
 
 `pip install -r requirements.txt`
+
 Prepare your dataset: Ensure you have a dataset of emails organized into ham (non-spam) and spam directories.
 
 ## Usage
 Run the email preprocessor: Execute the email_preprocessor.py script to load and preprocess the emails:
 
 `python email_preprocessor.py`
+
 This script will generate a cleaned_emails.csv file containing the processed email data.
 
 Vectorize the email data: After preprocessing, run the vectorize.py script to convert the email text into numerical format suitable for machine learning:
 
 `python vectorize.py`
+
 This will create vectorized training and testing data files (X_train_vectorized.csv, X_test_vectorized.csv, y_train.csv, y_test.csv).
 
 Train your model:
