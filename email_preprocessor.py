@@ -11,9 +11,25 @@ import pandas as pd
 # Used dataset (ensure they are in the working directory)
 # https://drive.google.com/file/d/13g8D4KxHoS0iZPCHSHo93sFmHKKcmRId/view?usp=sharing
 
-# Downloads nltk resources needed, can be commented after download
-# nltk.download('stopwords')  # Downloads list of common stopwords
-# nltk.download('punkt')      # Downloads resources needed for tokenization
+# Function to check and download NLTK resources if not already downloaded
+
+
+def download_nltk_resources():
+    try:
+        # Check if stopwords are available
+        stopwords.words('english')
+    except LookupError:
+        nltk.download('stopwords')  # Download stopwords if not available
+
+    try:
+        # Check if punkt tokenizer is available
+        nltk.data.find('tokenizers/punkt')
+    except LookupError:
+        nltk.download('punkt')  # Download punkt if not available
+
+
+# Call the function to ensure necessary NLTK resources are downloaded
+download_nltk_resources()
 
 
 def preprocessor(data):

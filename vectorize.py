@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 data = pd.read_csv('cleaned_emails.csv')
 
 # Check for NaN values in the 'content' column
-print("NaN values in the 'content' column:", data['content'].isna().sum())
+# print("NaN values in the 'content' column:", data['content'].isna().sum())
 
 # Option 1: Drop rows with NaN values
 # data = data.dropna(subset=['content'])
