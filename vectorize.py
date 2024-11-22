@@ -5,6 +5,45 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 # For splitting data into training and testing sets
 from sklearn.model_selection import train_test_split
 
+
+def load_and_vectorize_data():
+    """
+    Load and vectorize email data from a CSV file.
+
+    This function reads preprocessed email data from a CSV file, handles any NaN values
+    in the content column, and uses the TF-IDF vectorization technique to convert the
+    email text into a numerical format suitable for machine learning models.
+
+    Returns:
+        X_vec (scipy.sparse.csr.csr_matrix): A sparse matrix of shape (n_samples, n_features)
+            containing the TF-IDF representation of the email content.
+        labels (numpy.ndarray): An array of shape (n_samples,) containing the labels
+            (0 for non-spam and 1 for spam) corresponding to the email content.
+        vectorizer (TfidfVectorizer): The fitted TF-IDF vectorizer object that can be used
+            for transforming new data.
+    """
+
+    # Load preprocessed data from a CSV file
+    data = pd.read_csv('cleaned_emails.csv')
+
+    # Handle NaN values in the 'content' column by filling them with an empty string
+    # This ensures that the vectorizer does not encounter any NaN values during transformation
+    data['content'] = data['content'].fillna('')
+
+    # Initialize the TF-IDF vectorizer
+    # max_features=5000 limits the number of features to the 5000 most important words
+    # ngram_range=(1, 1) specifies that only unigrams (single words) will be used
+    vectorizer = TfidfVectorizer(max_features=5000, ngram_range=(1, 1))
+
+    # Fit the vectorizer to the content data and transform it into a TF-IDF representation
+    # This step learns the vocabulary and idf from the training data and converts the text
+    # into a numerical format that machine learning algorithms can process
+    X_vec = vectorizer.fit_transform(data['content'])
+
+    # Return the vectorized data (X_vec), the labels, and the fitted vectorizer
+    return X_vec, data['label'].values, vectorizer
+
+
 # Load preprocessed data
 # Assuming `cleaned_emails.csv` contains two columns:
 # 'label' - where 0 indicates non-spam and 1 indicates spam
