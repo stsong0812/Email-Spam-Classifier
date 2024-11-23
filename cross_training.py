@@ -10,6 +10,8 @@ from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import cross_val_score
 # Import the function to load and vectorize data from vectorize.py
 from vectorize import load_and_vectorize_data
+# function for saving the trained model
+from joblib import dump
 
 # Load and vectorize the data
 X_vec, y, vectorizer = load_and_vectorize_data()
@@ -44,3 +46,6 @@ predictions = nb_classifier.predict(X_vec)
 print(classification_report(y, predictions))
 # This report includes various metrics such as precision, recall, F1-score, and support,
 # providing a detailed evaluation of the model's performance on the dataset.
+
+# save the model to a file
+dump(nb_classifier,'cross_trained_model.joblib')

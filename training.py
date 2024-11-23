@@ -6,6 +6,8 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score
 # Import numpy for numerical operations (not used in this script but often useful)
 import numpy as np
+# function for saving the trained model
+from joblib import dump
 
 # Load the vectorized training and testing data from CSV files
 # Load the training feature set (vectorized email texts)
@@ -41,3 +43,6 @@ print("Predictions:", predictions)
 # Compute the accuracy score using the true labels (y_test) and predicted labels
 accuracy = accuracy_score(y_test, predictions)
 print("Accuracy:", accuracy)  # Print the accuracy of the model to the console
+
+
+dump(nb_classifier,'trained_model.joblib')

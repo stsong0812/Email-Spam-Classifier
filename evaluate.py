@@ -2,6 +2,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import confusion_matrix,accuracy_score,precision_score
 from scipy.sparse import csr_matrix
 import pandas as pd
+from joblib import load
 
 def evaluate_model(model:MultinomialNB):
 
@@ -19,4 +20,12 @@ def evaluate_model(model:MultinomialNB):
 
     print(matrix)
     print(f'accuracy: {accuracy} ({accuracy*100}%)')
-    print(f'precision: {precision} ({precision*100}%)')
+    print(f'precision: {precision} ({precision*100}%)\n')
+
+trained_model=load('trained_model.joblib')
+print('evaluation for training.py:')
+evaluate_model(trained_model)
+
+cross_trained_model=load('cross_trained_model.joblib')
+print('evaluation for cross_training.py:')
+evaluate_model(cross_trained_model)
