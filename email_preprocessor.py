@@ -78,19 +78,32 @@ def load_data(label, directory):
     return data
 
 
-# Declare both spam and ham os paths
-spam_path = "dataset/spam"
-ham_path = "dataset/ham"
+# # Declare both spam and ham os paths
+# spam_path = "dataset/spam"
+# ham_path = "dataset/ham"
 
-# Call load_data function for spam and ham
+# # Call load_data function for spam and ham
+# spam_data = load_data('spam', spam_path)
+# ham_data = load_data('ham', ham_path)
+
+# # Combine spam and ham data
+# all_data = spam_data + ham_data
+
+# # Convert to DataFrame
+# df = pd.DataFrame(all_data)
+
+# # Save to CSV
+# df.to_csv('cleaned_emails.csv', index=False)
+
+# do the same thing for the test set
+spam_path = "dataset/spam_test"
+ham_path = "dataset/ham_test"
+
 spam_data = load_data('spam', spam_path)
 ham_data = load_data('ham', ham_path)
 
-# Combine spam and ham data
 all_data = spam_data + ham_data
 
-# Convert to DataFrame
 df = pd.DataFrame(all_data)
 
-# Save to CSV
-df.to_csv('cleaned_emails.csv', index=False)
+df.to_csv('cleaned_emails_test.csv', index=False)

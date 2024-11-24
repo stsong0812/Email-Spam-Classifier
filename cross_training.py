@@ -47,5 +47,6 @@ print(classification_report(y, predictions))
 # This report includes various metrics such as precision, recall, F1-score, and support,
 # providing a detailed evaluation of the model's performance on the dataset.
 
-# save the model to a file
+# save the model and vectorizer to a file
 dump(nb_classifier,'cross_trained_model.joblib')
+dump(vectorizer,'cross_trained_model_vectorizer.joblib')

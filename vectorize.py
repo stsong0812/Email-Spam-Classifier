@@ -4,6 +4,7 @@ import pandas as pd  # For data manipulation and analysis
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 # For splitting data into training and testing sets
 from sklearn.model_selection import train_test_split
+from joblib import dump
 
 
 def load_and_vectorize_data():
@@ -105,3 +106,6 @@ X_test_df.to_csv('X_test_vectorized.csv', index=False)
 # This is important for model training and evaluation
 y_train.to_csv('y_train.csv', index=False)  # Save training labels
 y_test.to_csv('y_test.csv', index=False)    # Save testing labels
+
+# save training.py model's vectorizer
+dump(vectorizer,'trained_model_vectorizer.joblib')
