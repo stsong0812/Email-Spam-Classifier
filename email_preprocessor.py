@@ -8,8 +8,9 @@ import pandas as pd
 
 # IMPORTANT!
 
-# Used dataset (ensure they are in the working directory)
-# https://drive.google.com/file/d/13g8D4KxHoS0iZPCHSHo93sFmHKKcmRId/view?usp=sharing
+# Used dataset and testset (ensure they are in the working directory)
+# dataset: https://drive.google.com/file/d/13g8D4KxHoS0iZPCHSHo93sFmHKKcmRId/view?usp=sharing
+# testset: https://drive.google.com/file/d/1zDwIv7DboxS3kpm_S7BrmjGV5lLlQ2iw/view?usp=drive_link
 
 # Function to check and download NLTK resources if not already downloaded
 
@@ -78,26 +79,26 @@ def load_data(label, directory):
     return data
 
 
-# # Declare both spam and ham os paths
-# spam_path = "dataset/spam"
-# ham_path = "dataset/ham"
+# Declare both spam and ham os paths
+spam_path = "dataset/spam"
+ham_path = "dataset/ham"
 
-# # Call load_data function for spam and ham
-# spam_data = load_data('spam', spam_path)
-# ham_data = load_data('ham', ham_path)
+# Call load_data function for spam and ham
+spam_data = load_data('spam', spam_path)
+ham_data = load_data('ham', ham_path)
 
-# # Combine spam and ham data
-# all_data = spam_data + ham_data
+# Combine spam and ham data
+all_data = spam_data + ham_data
 
-# # Convert to DataFrame
-# df = pd.DataFrame(all_data)
+# Convert to DataFrame
+df = pd.DataFrame(all_data)
 
-# # Save to CSV
-# df.to_csv('cleaned_emails.csv', index=False)
+# Save to CSV
+df.to_csv('cleaned_emails.csv', index=False)
 
 # do the same thing for the test set
-spam_path = "dataset/spam_test"
-ham_path = "dataset/ham_test"
+spam_path = "testset/spam"
+ham_path = "testset/ham"
 
 spam_data = load_data('spam', spam_path)
 ham_data = load_data('ham', ham_path)
