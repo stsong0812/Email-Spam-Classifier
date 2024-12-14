@@ -43,7 +43,9 @@ Install the required packages: Use the requirements.txt file to install the nece
 
 `pip install -r requirements.txt`
 
-Prepare your dataset: Ensure you have a dataset of emails organized into ham (non-spam) and spam directories.
+Prepare the dataset: https://drive.google.com/file/d/1dupVKuXqRqBLAkx0K2gBmq3BVx84Ewgy/view?usp=sharing
+
+Download the compressed dataset from the above link and extract into the working directory.
 
 ## Usage
 Run the email preprocessor: Execute the email_preprocessor.py script to load and preprocess the emails:
@@ -65,3 +67,7 @@ email_preprocessor.py: Script to load and preprocess the email dataset, saving t
 vectorize.py: Script to vectorize the cleaned email data and save the vectorized training and testing datasets.
 
 requirements.txt: Contains a list of required Python packages for the project.
+
+Run the spam email classifier:
+
+`python MNB_email_classifier.py`
